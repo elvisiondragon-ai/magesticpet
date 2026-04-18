@@ -93,6 +93,7 @@
   }
   .hero-tagline strong { color: var(--gold-light); }
 
+  img.responsive { width: 100%; height: auto; border-radius: var(--radius); margin-bottom: 20px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
   /* SECTION */
   section { padding: 32px 20px; }
   .section-label {
@@ -274,30 +275,21 @@
 
 <!-- HERO -->
 <div class="hero">
-  <div class="hero-badge">✦ Formulasi Jerman</div>
+  <div class="hero-badge">✦ Formulasi USA</div>
   <h1><span>Majestic</span>Pet</h1>
   <p class="hero-sub">Spesialis Shampoo Premium untuk Kucing</p>
 
-  <div class="bottle-wrap">
-    <svg viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <rect x="26" y="18" width="20" height="42" rx="6" fill="#C9962A" opacity="0.9"/>
-      <rect x="30" y="12" width="12" height="8" rx="3" fill="#F0D28A"/>
-      <rect x="34" y="8" width="4" height="6" rx="2" fill="#C9962A"/>
-      <rect x="28" y="26" width="16" height="2" rx="1" fill="rgba(255,255,255,0.3)"/>
-      <rect x="28" y="32" width="16" height="8" rx="2" fill="rgba(255,255,255,0.15)"/>
-      <circle cx="36" cy="50" r="5" fill="rgba(255,255,255,0.1)"/>
-      <path d="M32 50 Q36 46 40 50" stroke="rgba(255,255,255,0.4)" stroke-width="1.5" fill="none" stroke-linecap="round"/>
-    </svg>
-  </div>
+  <img src="/bottle_original.png" alt="Magestic Pet Original" style="width: 250px; height: auto; margin: 0 auto 28px; display: block; border-radius: 12px; box-shadow: 0 8px 24px rgba(0,0,0,0.5);" />
 
   <p class="hero-tagline">
     Bulu kucing <strong>bersinar, lebat</strong> & bebas minyak.<br>
-    Teknologi lab premium dari Jerman.
+    Teknologi lab premium dari USA.
   </p>
 </div>
 
 <!-- BENEFITS -->
 <section style="padding: 28px 20px;">
+  <img src="/cat_before_after.png" class="responsive" alt="Before After Cat" />
   <p class="section-label">Manfaat Unggulan</p>
   <h2 class="section-title">Kenapa MagesticPet Beda?</h2>
   <div class="benefits" style="padding: 4px 16px;">
@@ -336,11 +328,12 @@
 
 <!-- FORMULA BAND -->
 <div style="height: 24px;"></div>
+<div style="padding: 0 20px;"><img src="/cat_bath.png" class="responsive" alt="Cat Bathing" /></div>
 <div class="formula-band">
   <p class="section-label" style="color: var(--gold);">Keunggulan Formulasi</p>
-  <h2 class="section-title">Dibuat di Jerman, Dipercaya di Rumah Anda</h2>
-  <p>Formulasi eksklusif MagesticPet dikembangkan menggunakan teknologi perawatan bulu hewan terdepan dari laboratorium Jerman. Setiap tetes mengandung bahan aktif berkualitas premium yang aman dan lembut untuk kucing Anda.</p>
-  <div class="formula-flag">🇩🇪 &nbsp;German Lab Formula</div>
+  <h2 class="section-title">Dibuat di USA, Dipercaya di Rumah Anda</h2>
+  <p>Formulasi eksklusif MagesticPet dikembangkan menggunakan teknologi perawatan bulu hewan terdepan dari laboratorium USA. Setiap tetes mengandung bahan aktif berkualitas premium yang aman dan lembut untuk kucing Anda.</p>
+  <div class="formula-flag">🇺🇸 &nbsp;USA Lab Formula</div>
 </div>
 
 <!-- PRICING -->
@@ -359,6 +352,27 @@
       <p class="price-main">Rp 450.000</p>
       <p class="price-saving">💰 Hemat Rp 150.000</p>
       <p class="price-per">Rp 1.500 / ml</p>
+    </div>
+  </div>
+</section>
+
+<!-- VARIANTS -->
+<section style="padding: 10px 20px 30px;">
+  <div style="background: var(--white); border-radius: var(--radius); border: 1.5px solid #E8DFC5; padding: 20px; text-align: center;">
+    <p class="section-label">Pilihan Varian</p>
+    <h2 class="section-title" style="font-size: 20px; margin-bottom: 16px;">2 Varian Eksklusif Aroma</h2>
+    <div style="display: flex; gap: 12px; margin-bottom: 16px;">
+      <div style="flex: 1;">
+        <img src="/bottle_lavender.png" style="width: 100%; border-radius: 8px;" alt="Lavender Variant" />
+        <p style="font-weight: 600; font-size: 14px; margin-top: 8px;">Lavender</p>
+      </div>
+      <div style="flex: 1;">
+        <img src="/bottle_bubblegum.png" style="width: 100%; border-radius: 8px;" alt="Bubble Gum Variant" />
+        <p style="font-weight: 600; font-size: 14px; margin-top: 8px;">Bubble Gum</p>
+      </div>
+    </div>
+    <div style="background: rgba(201,150,42,0.12); border-radius: 8px; padding: 12px; color: var(--gold); font-weight: 600; font-size: 14px;">
+      ✨ BONUS: Dapatkan Sampel Gratis pada setiap pembelian!
     </div>
   </div>
 </section>
@@ -383,6 +397,7 @@
 
 <!-- CTA -->
 <div class="cta-section">
+  <img src="/cat_majestic.png" alt="Majestic Cat" style="width: 100%; max-width: 200px; height: auto; border-radius: 12px; margin-bottom: 24px; box-shadow: 0 4px 16px rgba(0,0,0,0.5);" />
   <p class="section-label" style="color: var(--gold); text-align:center;">Pesan Sekarang</p>
   <h2 class="section-title" style="font-size:22px;">Wujudkan Bulu Kucing Impian Anda</h2>
   <p>Stok terbatas. Dapatkan penawaran terbaik hari ini.</p>
@@ -396,7 +411,7 @@
 
 <footer>
   © 2025 MagesticPet · Premium Pet Care Indonesia<br>
-  Formulasi Jerman · Lab Tested · Money Back Guarantee
+  Formulasi USA · Lab Tested · Money Back Guarantee
 </footer>
 
 </body>
