@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MagesticPet – Shampoo Premium untuk Kucing</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --gold: #C9962A;
+    --gold-light: #F0D28A;
+    --gold-pale: #FBF3DC;
+    --cream: #FDF8EE;
+    --deep: #1A1208;
+    --muted: #6B5E3E;
+    --white: #FFFFFF;
+    --radius: 16px;
+  }
+
+  body {
+    background: var(--cream);
+    color: var(--deep);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px;
+    line-height: 1.6;
+    max-width: 430px;
+    margin: 0 auto;
+    overflow-x: hidden;
+  }
+
+  /* HERO */
+  .hero {
+    background: var(--deep);
+    padding: 48px 24px 40px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -60px; left: 50%;
+    transform: translateX(-50%);
+    width: 300px; height: 300px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(201,150,42,0.18) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .hero-badge {
+    display: inline-block;
+    background: var(--gold);
+    color: var(--deep);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 4px 14px;
+    border-radius: 100px;
+    margin-bottom: 18px;
+  }
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 38px;
+    font-weight: 900;
+    color: var(--gold-light);
+    line-height: 1.1;
+    margin-bottom: 8px;
+  }
+  .hero h1 span {
+    color: var(--white);
+  }
+  .hero-sub {
+    font-size: 13px;
+    color: rgba(255,255,255,0.55);
+    letter-spacing: 0.5px;
+    margin-bottom: 28px;
+  }
+  .bottle-wrap {
+    width: 130px; height: 130px;
+    background: rgba(201,150,42,0.12);
+    border: 1.5px solid rgba(201,150,42,0.35);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 28px;
+  }
+  .bottle-wrap svg { width: 72px; height: 72px; }
+  .hero-tagline {
+    font-size: 16px;
+    color: rgba(255,255,255,0.82);
+    line-height: 1.55;
+  }
+  .hero-tagline strong { color: var(--gold-light); }
+
+  /* SECTION */
+  section { padding: 32px 20px; }
+  .section-label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 6px;
+  }
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.25;
+    margin-bottom: 20px;
+    color: var(--deep);
+  }
+
+  /* BENEFITS */
+  .benefits { background: var(--white); border-radius: var(--radius); }
+  .benefit-item {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+    padding: 14px 0;
+    border-bottom: 1px solid #F0E9D5;
+  }
+  .benefit-item:last-child { border-bottom: none; }
+  .benefit-icon {
+    width: 40px; height: 40px; flex-shrink: 0;
+    background: var(--gold-pale);
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 20px;
+  }
+  .benefit-title { font-weight: 600; font-size: 14px; margin-bottom: 2px; }
+  .benefit-desc { font-size: 13px; color: var(--muted); line-height: 1.4; }
+
+  /* FORMULA */
+  .formula-band {
+    background: linear-gradient(135deg, #1A1208 60%, #2E1F06);
+    border-radius: var(--radius);
+    padding: 28px 22px;
+    margin: 0 20px 28px;
+  }
+  .formula-band .section-title { color: var(--gold-light); margin-bottom: 10px; }
+  .formula-band p { color: rgba(255,255,255,0.7); font-size: 14px; line-height: 1.6; }
+  .formula-flag {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(201,150,42,0.18);
+    border: 1px solid rgba(201,150,42,0.4);
+    border-radius: 100px;
+    padding: 6px 16px;
+    margin-top: 16px;
+    font-size: 13px;
+    color: var(--gold-light);
+    font-weight: 500;
+  }
+
+  /* PRICING */
+  .pricing-section { background: var(--cream); }
+  .price-cards { display: flex; flex-direction: column; gap: 14px; }
+  .price-card {
+    background: var(--white);
+    border-radius: var(--radius);
+    border: 1.5px solid #E8DFC5;
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+  }
+  .price-card.best {
+    border-color: var(--gold);
+    background: var(--deep);
+  }
+  .best-badge {
+    position: absolute;
+    top: 14px; right: 14px;
+    background: var(--gold);
+    color: var(--deep);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 3px 10px;
+    border-radius: 100px;
+  }
+  .price-qty { font-size: 13px; color: var(--muted); margin-bottom: 4px; }
+  .price-card.best .price-qty { color: rgba(255,255,255,0.55); }
+  .price-main { font-family: 'Playfair Display', serif; font-size: 30px; font-weight: 700; color: var(--deep); }
+  .price-card.best .price-main { color: var(--gold-light); }
+  .price-saving { font-size: 13px; color: #27A055; font-weight: 500; margin-top: 4px; }
+  .price-per { font-size: 12px; color: var(--muted); margin-top: 2px; }
+  .price-card.best .price-per { color: rgba(255,255,255,0.45); }
+
+  /* SHIPPING */
+  .ship-band {
+    background: #E8F5EE;
+    border-radius: var(--radius);
+    margin: 0 20px 24px;
+    padding: 18px 20px;
+    display: flex; align-items: center; gap: 14px;
+  }
+  .ship-icon { font-size: 28px; flex-shrink: 0; }
+  .ship-title { font-weight: 600; font-size: 14px; color: #1A4D2E; }
+  .ship-desc { font-size: 12px; color: #3D7A50; margin-top: 2px; }
+
+  /* GUARANTEE */
+  .guarantee-band {
+    background: var(--white);
+    border-radius: var(--radius);
+    margin: 0 20px 24px;
+    padding: 22px 20px;
+    display: flex; gap: 16px; align-items: flex-start;
+    border: 1.5px solid #E8DFC5;
+  }
+  .guarantee-icon { font-size: 32px; flex-shrink: 0; }
+  .guarantee-title { font-weight: 700; font-size: 15px; color: var(--deep); margin-bottom: 4px; }
+  .guarantee-desc { font-size: 13px; color: var(--muted); line-height: 1.5; }
+
+  /* CTA */
+  .cta-section {
+    background: var(--deep);
+    padding: 36px 24px 44px;
+    text-align: center;
+  }
+  .cta-section .section-title { color: var(--gold-light); text-align: center; }
+  .cta-section p { color: rgba(255,255,255,0.6); font-size: 14px; margin-bottom: 28px; }
+  .btn-primary {
+    display: block;
+    width: 100%;
+    background: var(--gold);
+    color: var(--deep);
+    font-size: 16px;
+    font-weight: 700;
+    padding: 16px 24px;
+    border-radius: 100px;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    letter-spacing: 0.3px;
+    margin-bottom: 12px;
+    transition: opacity 0.2s;
+  }
+  .btn-primary:active { opacity: 0.85; }
+  .btn-secondary {
+    display: block;
+    width: 100%;
+    background: transparent;
+    color: rgba(255,255,255,0.7);
+    font-size: 14px;
+    font-weight: 500;
+    padding: 14px 24px;
+    border-radius: 100px;
+    border: 1px solid rgba(255,255,255,0.2);
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.2s;
+  }
+  .btn-secondary:active { background: rgba(255,255,255,0.06); }
+
+  /* DIVIDER */
+  .divider {
+    height: 1px;
+    background: #E8DFC5;
+    margin: 0 20px;
+  }
+
+  /* FOOTER */
+  footer {
+    padding: 20px 24px;
+    text-align: center;
+    font-size: 12px;
+    color: var(--muted);
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-badge">✦ Formulasi Jerman</div>
+  <h1><span>Majestic</span>Pet</h1>
+  <p class="hero-sub">Spesialis Shampoo Premium untuk Kucing</p>
+
+  <div class="bottle-wrap">
+    <svg viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect x="26" y="18" width="20" height="42" rx="6" fill="#C9962A" opacity="0.9"/>
+      <rect x="30" y="12" width="12" height="8" rx="3" fill="#F0D28A"/>
+      <rect x="34" y="8" width="4" height="6" rx="2" fill="#C9962A"/>
+      <rect x="28" y="26" width="16" height="2" rx="1" fill="rgba(255,255,255,0.3)"/>
+      <rect x="28" y="32" width="16" height="8" rx="2" fill="rgba(255,255,255,0.15)"/>
+      <circle cx="36" cy="50" r="5" fill="rgba(255,255,255,0.1)"/>
+      <path d="M32 50 Q36 46 40 50" stroke="rgba(255,255,255,0.4)" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+    </svg>
+  </div>
+
+  <p class="hero-tagline">
+    Bulu kucing <strong>bersinar, lebat</strong> & bebas minyak.<br>
+    Teknologi lab premium dari Jerman.
+  </p>
+</div>
+
+<!-- BENEFITS -->
+<section style="padding: 28px 20px;">
+  <p class="section-label">Manfaat Unggulan</p>
+  <h2 class="section-title">Kenapa MagesticPet Beda?</h2>
+  <div class="benefits" style="padding: 4px 16px;">
+    <div class="benefit-item">
+      <div class="benefit-icon">✨</div>
+      <div>
+        <p class="benefit-title">Bulu Bersinar & Mengembang</p>
+        <p class="benefit-desc">Formula khusus membuat bulu kucing tampak tebal, lembut, dan berkilau alami.</p>
+      </div>
+    </div>
+    <div class="benefit-item">
+      <div class="benefit-icon">🛡️</div>
+      <div>
+        <p class="benefit-title">Kurangi Kerontokan</p>
+        <p class="benefit-desc">Nutrisi aktif memperkuat akar bulu sehingga kerontokan berkurang signifikan.</p>
+      </div>
+    </div>
+    <div class="benefit-item">
+      <div class="benefit-icon">💧</div>
+      <div>
+        <p class="benefit-title">Hilangkan Minyak Berlebih</p>
+        <p class="benefit-desc">Bersih sempurna tanpa merusak pelindung alami kulit kucing kesayangan Anda.</p>
+      </div>
+    </div>
+    <div class="benefit-item">
+      <div class="benefit-icon">🔬</div>
+      <div>
+        <p class="benefit-title">Uji Lab Terbukti</p>
+        <p class="benefit-desc">Diformulasikan dengan standar riset laboratorium premium berkualitas tinggi.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- FORMULA BAND -->
+<div style="height: 24px;"></div>
+<div class="formula-band">
+  <p class="section-label" style="color: var(--gold);">Keunggulan Formulasi</p>
+  <h2 class="section-title">Dibuat di Jerman, Dipercaya di Rumah Anda</h2>
+  <p>Formulasi eksklusif MagesticPet dikembangkan menggunakan teknologi perawatan bulu hewan terdepan dari laboratorium Jerman. Setiap tetes mengandung bahan aktif berkualitas premium yang aman dan lembut untuk kucing Anda.</p>
+  <div class="formula-flag">🇩🇪 &nbsp;German Lab Formula</div>
+</div>
+
+<!-- PRICING -->
+<section class="pricing-section">
+  <p class="section-label">Pilih Paket</p>
+  <h2 class="section-title">Harga Terjangkau, Kualitas Premium</h2>
+  <div class="price-cards">
+    <div class="price-card">
+      <p class="price-qty">1 Botol · 100 ml</p>
+      <p class="price-main">Rp 200.000</p>
+      <p class="price-per">Rp 2.000 / ml</p>
+    </div>
+    <div class="price-card best">
+      <div class="best-badge">Hemat</div>
+      <p class="price-qty">3 Botol · 300 ml total</p>
+      <p class="price-main">Rp 450.000</p>
+      <p class="price-saving">💰 Hemat Rp 150.000</p>
+      <p class="price-per">Rp 1.500 / ml</p>
+    </div>
+  </div>
+</section>
+
+<!-- SHIPPING -->
+<div class="ship-band">
+  <div class="ship-icon">🚚</div>
+  <div>
+    <p class="ship-title">Ongkir GRATIS Jabodetabek</p>
+    <p class="ship-desc">Pesan sekarang, dikirim cepat ke seluruh wilayah Jabodetabek tanpa biaya ongkir.</p>
+  </div>
+</div>
+
+<!-- GUARANTEE -->
+<div class="guarantee-band">
+  <div class="guarantee-icon">✅</div>
+  <div>
+    <p class="guarantee-title">Garansi Uang Kembali</p>
+    <p class="guarantee-desc">Tidak terbukti hasil nyata? Kami kembalikan uang Anda. Tanpa pertanyaan, tanpa ribet.</p>
+  </div>
+</div>
+
+<!-- CTA -->
+<div class="cta-section">
+  <p class="section-label" style="color: var(--gold); text-align:center;">Pesan Sekarang</p>
+  <h2 class="section-title" style="font-size:22px;">Wujudkan Bulu Kucing Impian Anda</h2>
+  <p>Stok terbatas. Dapatkan penawaran terbaik hari ini.</p>
+  <a href="https://wa.me/628000000000?text=Halo%2C%20saya%20mau%20pesan%20MagesticPet%20shampoo" class="btn-primary">
+    🛒 &nbsp; Pesan via WhatsApp
+  </a>
+  <a href="https://wa.me/628000000000?text=Halo%2C%20saya%20ingin%20tanya%20tentang%20MagesticPet" class="btn-secondary">
+    Tanya Dulu
+  </a>
+</div>
+
+<footer>
+  © 2025 MagesticPet · Premium Pet Care Indonesia<br>
+  Formulasi Jerman · Lab Tested · Money Back Guarantee
+</footer>
+
+</body>
+</html>
